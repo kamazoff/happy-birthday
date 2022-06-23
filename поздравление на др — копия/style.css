@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    transform: translateZ(0);
+}
+
+
+body {
+    max-width: 1920px;
+    margin: 0;
+}
+
+.main {
+    
+    
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 30px auto;
+}
+
+.header__front {
+    position: relative;
+    background-image: url(./Images/HappyBirthday.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    transition: all 1s ease;
+    
+}
+
+/* .title__back {
+      
+       width: 100%;
+       height: 100%;
+       
+} */
+
+
+.title__back__grid {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    
+    flex-flow: row wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 50px 30px;
+    transition: transform 2s ease;
+    transform: translate(100%, 0);
+    
+}
+
+
+
+.title__back:hover .title__back__grid {
+    
+    transition: transform 2s ease;
+     transform: translate(0, 0);
+}
+
+
+
+.header__title {
+    position: absolute;
+    top: 15%;
+    left: 45%;
+    transition: opacity 2s ease;
+    width: 40%;
+    height: 40%;
+    
+}
+
+
+
+.header__front:hover .header__title {
+    transition: opacity 2s ease;
+    opacity: 0;
+}
+
+
+.back__container {
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 12.4vw;
+    height: 12.4vw;
+    margin-bottom: 20px; 
+    opacity: 0;
+    border-radius: 10px;
+    /* transition: all 4s ease; */
+}
+
+
+
+ .back__container {
+    opacity: .4;
+    z-index: 101;
+    transition: all .4s;
+    
+}
+
+
+
+.back__container:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    transition: all .4s ease;
+}
+
+.back__container__text {
+    opacity: 0;
+    overflow: hidden;
+    display: none;
+}
+
+.back__container-0 {
+    background-image: url(./Images/DenRozhdeniya.JPG);
+    
+}
+
+.back__container-1 {
+    background-image: url(./Images/14February.JPG);
+    
+}
+
+.back__container-2 {
+    background-image: url(./Images/Tom.jpg);
+}
+
+.back__container-3 {
+    background-image: url(./Images/Alleya.JPG);
+}
+
+.back__container-4 {
+    background-image: url(./Images//Alleya2.JPG);
+}
+
+.back__container-5 {
+    background-image: url(./Images/DetkiVladik.jpg);
+}
+
+.back__container-6 {
+    background-image: url(./Images/Edyusha.JPG);
+}
+
+.back__container-7 {
+    background-image: url(./Images/Videozvonok.jpg);
+}
+
+.back__container-8 {
+    background-image: url(./Images/Edyusha3.JPG);
+}
+
+.back__container-9 {
+    background-image: url(./Images/Vystavka.jpg);
+}
+
+.back__container-10 {
+    background-image: url(./Images/Pushkina.jpg);
+}
+
+.back__container-11 {
+    background-image: url(./Images/Evochka3.JPG);
+}
+
+.back__container-12 {
+    background-image: url(./Images/Firstflowers.jpg);
+}
+
+.back__container-13 {
+    background-image: url(./Images/Kino.JPG);
+}
+
+.back__container-14 {
+    background-image: url(./Images/ParkMikhailovsk.JPG);
+}
+
+.back__container-15 {
+    background-image: url(./Images/Princessa.jpg);
+}
+
+.back__container-16 {
+    background-image: url(./Images/Princessa2.JPG);
+}
+
+.back__container:hover {
+    opacity: 1;
+    outline: 2px solid orange;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, .8); */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease;
+    transform: translate(0, -100%);
+}
+
+.popup__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.popup__content {
+    position: relative;
+    background-color: white;
+    color: black;
+    width: 600px;
+    max-height: 100%;
+    height: 800px;
+    margin: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 4px solid orange;
+    border-radius: 25px;
+}
+.popup__content::-webkit-scrollbar {
+    width: 0;
+}
+
+.popup__content:hover::-webkit-scrollbar {
+    width: 100%;
+}
+
+.popup__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    transform: rotate(45deg);
+    transition: transform .4s ease;
+    text-shadow: 2px 1px 2px #000;
+}
+
+.popup__close:hover{
+    transform: scale(1.1);
+}
+
+.popup__content:hover .popup__close {
+    
+    z-index: 1000;
+    
+    
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+    perspective: 1000px;
+}
+
+
+.popup__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popup__link {
+    z-index: 200;
+}
+
+.popup__poem {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: whitesmoke;
+    text-shadow: 1px 0 1px #000;
+    text-align: justify;
+}
+
+.popup__content-1 {
+    background-image: url(images/14February.jpg);
+    width: 900px;
+    height: 600px;
+}
+
+.popup__content-2 {
+    background-image: url(/Images/Tom.jpg);
+}
+
+.popup__content-3 {
+    background-image: url(./Images/Alleya.JPG);
+}
+
+.popup__content-4 {
+    background-image: url(./Images/Alleya2.jpg);
+}
+.popup__content-5 {
+    background-image: url(./Images/DetkiVladik.jpg);
+    width: 900px;
+    height: 600px;
+}
+.popup__content-6 {
+    background-image: url(./Images/Edyusha.jpg);
+    width: 900px;
+    height: 600px;
+}
+.popup__content-7 {
+    background-image: url(./Images/Videozvonok.jpg);
+}
+.popup__content-8 {
+    background-image: url(./Images/Edyusha3.jpg);
+}
+.popup__content-9 {
+    background-image: url(./Images/Vystavka.jpg);
+    width: 900px;
+    height: 600px;
+}
+.popup__content-10 {
+    background-image: url(./Images/Pushkina.jpg);
+    width: 900px;
+    height: 600px;
+}
+.popup__content-11 {
+    background-image: url(./Images/Evochka3.jpg);
+}
+.popup__content-12 {
+    background-image: url(./Images/Firstflowers.jpg);
+}
+.popup__content-13 {
+    background-image: url(./Images/Kino.jpg);
+}
+.popup__content-14 {
+    background-image: url(./Images/ParkMikhailovsk.jpg);
+}
+.popup__content-15 {
+    background-image: url(./Images/Princessa.jpg);
+}
+.popup__content-16 {
+    background-image: url(./Images/Princessa2.jpg);
+}
+
+.popup__content-0 {
+    background-image: url(./Images/DenRozhdeniya.JPG);
+    width: 900px;
+    height: 600px;
+}
+
+
+
+.popup__text {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    transform: translate(0px, 100%);
+    transition: all 3s ease;
+    
+}
+
+
+.popup__content:hover .popup__text {
+    transform: translate(0px, 0px);
+    background-color: rgba(0, 0, 0, .8);
+    
+
+}
+
+.first-letter {
+    font-weight: bold;
+    color: red;
+}
